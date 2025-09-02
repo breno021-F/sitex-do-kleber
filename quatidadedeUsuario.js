@@ -3,7 +3,7 @@ async function quantidadedeUsuarios() {
     const res = await fetch(url)
     const dados = await res.json()
     const nomeDosPostos = Object.keys(dados)
-  const quantidadeTrabalhadores = Object.values(dados)
+    const quantidadeTrabalhadores = Object.values(dados)
 
 
   const data = [
