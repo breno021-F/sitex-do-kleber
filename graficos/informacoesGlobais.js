@@ -18,6 +18,8 @@ async function visualizarInformacoesGlobais() {
         const container = document.getElementById('graficos-container')
         container.appendChild(paragrafo)
 
+    } catch (error) {
+        console.error('Erro ao carregar dados:', error)
     }
 }
 
