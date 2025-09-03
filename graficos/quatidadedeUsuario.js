@@ -46,11 +46,6 @@ async function quantidadedeUsuarios() {
         Plotly.newPlot('grafico-barras', data, layout)
         console.log('Gráfico criado com sucesso!')
 
-    } catch (error) {
-        console.error('Erro ao carregar gráfico:', error)
-        const erroDiv = document.createElement('div')
-        erroDiv.innerHTML = `<p style="color: red;">Erro ao carregar gráfico: ${error.message}</p>`
-        document.getElementById('graficos-container').appendChild(erroDiv)
     }
 }
 
