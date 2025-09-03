@@ -7,7 +7,6 @@ async function quantidadedeUsuarios() {
 
 
 
-
   const data = [
     {
         x: nomeDosPostos,

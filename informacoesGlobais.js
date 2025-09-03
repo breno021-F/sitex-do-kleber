@@ -1,29 +1,19 @@
 const url='https://raw.githubusercontent.com/silviosnjr/CienciaDeDados-CriandoGraficosDinamicosComJavaScript/refs/heads/Aula01/transporte/transporte-dados-globais.json'
 
 
-
-
 async function visualizarInformacoesGlobais() {
 
 
-    const resposta = await fetch(url)
-
+ const resposta = await fetch(url)
 
    const dados = await resposta.json()
-
-
    const pessoasMundo = (dados.total_pessoas_mundo/1e9)
    const trabalhadoresMundo = (dados.total_pessoas_mundo/1e9)
    const tempoDesTrabalho = parselnt (dados.tempo_medio_deslocamento_para_trabalho)
    const minutos = Math.round((dados.tempo_medio_deslocamento_para_trabalho - tempoDesTrabalho) * 60)
 
 
-
-
-
-
-const paragrafo= document.createElement('p')
-
+ const paragrafo= document.createElement('p')
 
 paragrafo.classList.add('graficos-container_texto')
 
@@ -34,8 +24,6 @@ paragrafo.innerHTML = `O mundo tem <span>${pessoasMundo}</span>  bilhões de pes
 const container=document.getElementById('graficos-container')
    container.appendChild(paragrafo);
 
-
 }
-
 
 visualizarInformacoesGlobais()
