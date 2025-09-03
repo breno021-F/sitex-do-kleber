@@ -6,11 +6,11 @@ async function visualizarInformacoesGlobais() {
 
  const resposta = await fetch(url)
 
-   const dados = await resposta.json()
-   const pessoasMundo = (dados.total_pessoas_mundo/1e9)
-   const trabalhadoresMundo = (dados.total_pessoas_mundo/1e9)
-   const tempoDesTrabalho = parselnt (dados.tempo_medio_deslocamento_para_trabalho)
-   const minutos = Math.round((dados.tempo_medio_deslocamento_para_trabalho - tempoDesTrabalho) * 60)
+const dados = await resposta.json()
+const pessoasMundo = (dados.total_pessoas_mundo/1e9)
+const trabalhadoresMundo = (dados.total_pessoas_mundo/1e9)
+const tempoDesTrabalho = parselnt (dados.tempo_medio_deslocamento_para_trabalho)
+const minutos = Math.round((dados.tempo_medio_deslocamento_para_trabalho - tempoDesTrabalho) * 60)
 
 
  const paragrafo= document.createElement('p')
