@@ -1,28 +1,25 @@
 async function quantidadedeUsuarios() {
-    const url = 'https://raw.githubusercontent.com/silviosnjr/CienciaDeDados-CriandoGraficosDinamicosComJavaScript/refs/heads/Aula01/trabalho/trabalho-tipos-de-ocupacao.json'
-    const res = await fetch(url)
-    const dados = await res.json()
-    const nomeDosPostos = Object.keys(dados)
-  const quantidadeTrabalhadores = Object.values(dados)
+    try {
+        const url = 'https://raw.githubusercontent.com/silviosnjr/CienciaDeDados-CriandoGraficosDinamicosComJavaScript/refs/heads/Aula01/trabalho/trabalho-tipos-de-ocupacao.json'
+        const res = await fetch(url)
+        const dados = await res.json()
+        const nomeDosPostos = Object.keys(dados)
+        const quantidadeTrabalhadores = Object.values(dados)
 
+        const data = [{
+            x: nomeDosPostos,
+            y: quantidadeTrabalhadores,
+            type: 'bar'
+        }]
 
+        const grafico = document.createElement('div')
+        grafico.className = 'graficos'
+        document.getElementById('graficos-container').appendChild(grafico)
+        Plotly.newPlot(grafico, data)
 
-  const data = [
-    {
-        x: nomeDosPostos,
-        y: quantidadeTrabalhadores,
-        type: 'bar'
+    } catch (error) {
+        console.error('Erro ao carregar gráfico:', error)
     }
-  ]
-
-
-  const grafico = document.createElement('div')
-  grafico.className = 'graficos'
-  document.getElementById('graficos-container').appendChild(grafico)
-  Plotly.newPlot(grafico, data)
-
-
 }
 
-
-quantidadedeUsuarios()
+document.addEventListener('DOMContentLoaded', quantidadedeUsuarios)
